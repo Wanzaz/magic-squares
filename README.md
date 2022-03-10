@@ -22,6 +22,6 @@ The user enters an odd n and the program prints a filled matrix n x n filled wit
 - i -> anti
 - j -> clockwise
 
-#### Task Decription in CZ
+#### Task Description in CZ
 Uživatel zadá liché n a program vypíše vyplněnou matici n x n naplněnou čísly 1, 2, 3, ... ,
 n^2 tak, že se žádné číslo neopakuje a součet v řádku i ve sloupci je vždy stejný. Řada, sloupec a obě diagonály mají stejný součet.
