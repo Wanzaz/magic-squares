@@ -9,13 +9,11 @@ The user enters an odd n and the program prints a filled matrix n x n filled wit
     ```n(n^2 + 1) / 2```
  
 
-## Rules
-1. 1 is sotred at position (n/2, n-1)
-2. (i, j) -> (i-1, j+1)
-3. if i=-1 -> i=n-1
-4. if j=n -> j=0
-5. If position is occupied, then i=i+1, j=j-2
-6. If (-1,n) -> (0,n-2)
+## Conditions 
+1. number 1 at position (n/2, n-1).
+2. After the number 1 alocated to position (n/2, n-1) -> (m, n). The next number will be located to position (m-1, n+1). But if the row = -1 then locate it to size - 1, and if the column position end up at size position then locate it to position 0.
+3. If the position has already been filled, then decrement the column position -2 and row increment position +1
+4. if(row == -1 and column == n), switch the location to (0, n - 2)
 
 #### Additional Notes
 - circle: 0, 1, 2
