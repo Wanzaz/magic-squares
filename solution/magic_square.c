@@ -17,9 +17,16 @@ int main()
     int size;
     printf("Enter size of magic square: ");
     scanf("%d", &size);
+
+    // checking for even numbers
+    if(size % 2 == 0)
+    {
+        printf("Enter odd number not even number!");
+        return -1;
+    }
+
     printf("The size of Magic Square is %d\n", size);
     printf("The sum of each row or column and both diagonals is %d\n", size * (size * size + 1) / 2);
-
 
     magic_square(mat, size);
     list(mat, size);
@@ -33,7 +40,7 @@ void list(int mat[][100], int size)
     for(i = 0; i < size ; i++)
     {
         for(j = 0; j < size ; j++)
-            printf("%d ", mat[i][j]);
+            printf("%3d ", mat[i][j]);
         printf("\n");
     }
 }
@@ -47,20 +54,20 @@ void magic_square(int mat[][100], int size)
         for(j = 0; j < size; j++)
             mat[i][j] = 0;
     }
-    
+
     // first position
     int row = size/2;
     int column = size - 1;
 
     // the power of size
     int number = size * size;
-    // the first number -> 1 
+    // the first number -> 1
     int count = 1;
 
     while(count <= number) {
         if(row == -1 && column == size){ // 4th condition
             column = size - 2;
-            row = 0; 
+            row = 0;
         }
         else{
             if(column == size) // if column comes at size, replace it with 0
@@ -68,7 +75,7 @@ void magic_square(int mat[][100], int size)
             if(row < 0)  // if row comes at 0, replace it with size-1
                 row = size - 1;
         }
-                
+
         if(mat[row][column] != 0) { // 3rd condition
             column = column - 2;
             row = row + 1;
@@ -78,7 +85,7 @@ void magic_square(int mat[][100], int size)
             mat[row][column] = count;  //insering the values
             count += 1;
         }
-        row = row - 1;  // 2nd condition 
+        row = row - 1;  // 2nd condition
         column = column + 1;
     }
 }
