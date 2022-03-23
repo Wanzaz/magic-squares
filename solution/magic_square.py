@@ -57,6 +57,10 @@ def magic_square(size):
 # user input of user's number
 user_num = int(input("Enter a number to create a magic square: "))
 
+if user_num % 2 == 0:
+    print("Enter odd number not even number!")
+    exit(-1)
+
 print ("Magic Square for number =", user_num) 
 print ("Sum of each row or column and both diagonals is",user_num * (user_num ** 2 + 1) / 2, "\n")
         
